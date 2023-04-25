@@ -4,7 +4,7 @@ This is a simple web application that allows users to create a shopping list. Th
 
 This project is built using HTML, CSS, and JavaScript, and utilizes the Document Object Model (DOM) to dynamically update the web page based on user interactions.
 
-Usage
+# Usage
 The shopping list can be accessed through the following URL: http://imranfi.dev.fast.sheridanc.on.ca/GitHub/FIZZA_IMRAN-A3-WEB/index.html or by opening the index.html file.
 
 When the user enters a product and its quantity and clicks the "Add" button, the input values are validated to ensure that both fields are filled. If either field is missing, an alert message is displayed. If both fields have valid input, a new row is added to the table with the product and quantity entered by the user, and a "remove" button is added to the row.
