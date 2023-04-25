@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--author: Fizza Imran
+    student ID: 991670304-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            color: rgb(17, 4, 127);
+           
+        }
+      
+    </style>
+</head>
+<body>
+    
+    <div id="container" style="width: 550px; border: 2px solid rgb(17, 4, 127); 
+    height: auto; margin: 0 auto;">
+
+        <h1 style="text-align: center; "><b>Shopping List</b></h1>
+
+        <form action="javascript:void(0);">
+
+            <fieldset style="border: 2px solid rgb(17, 4, 127);
+
+             width: 500px; height: auto; margin: 0 auto; background-color: rgba(0, 0, 255, 0.023);">
+
+                <label for="product">  Product:  </label>
+                <input type="product" id="product" name="product" >
+
+                <label for="quantity">  Quantity:  </label>
+                <input type="quantity" id="quantity" name="quantity" >
+
+                <button style="float: right ;" onclick="validation();">Add</button>
+                
+            </fieldset>
+        </form>
+
+        <br>
+        <br>
+
+        <table id="table" style ="border: 2px solid rgb(17, 4, 127); 
+        background-color: rgba(0, 0, 255, 0.023); margin: 0 auto ; width: 530px; height: auto;" >
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        function validation(){
+           
+                if(document.getElementById("product").value == ""){
+                    alert("Product Missing.");
+                }   
+                if(document.getElementById("quantity").value == ""){
+                    alert("Quantity Missing");
+                }    
+
+                if(document.getElementById("product").value != "" && document.getElementById("quantity").value != ""){
+
+                        let tr = document.createElement("tr");
+                        document.getElementById("table").appendChild(tr);
+
+                        let td = document.createElement("td");
+                        let pro = document.createTextNode(document.getElementById("product").value );
+                        td.appendChild(pro);
+                        tr.appendChild(td);
+                        td.style.cssText = "text-align: center";
+
+                        let td2 = document.createElement("td");
+                        let quan = document.createTextNode(document.getElementById("quantity").value );
+                        td2.appendChild(quan);
+                        tr.appendChild(td2);
+                        td2.style.cssText = "text-align: center";
+
+                        let td3 = document.createElement("td");
+                        let remove = document.createElement("button");
+                        td3.appendChild(remove);
+                        let text = document.createTextNode("remove");
+                        remove.appendChild(text);
+                        tr.appendChild(td3);
+                        td3.style.cssText = "text-align: center";
+                        
+
+                        document.getElementById("product").value = "";
+                        document.getElementById("quantity").value = "";
+
+                        document.getElementById("table").addEventListener("click", function(e){
+
+                            if(e.target.tagName === 'BUTTON'){
+                            console.log(e);
+                            e.target.parentNode.parentNode.remove();
+
+                            }
+                        }
+                        )
+                    }    
+            
+        }
+    </script>
+</body>
+</html>
